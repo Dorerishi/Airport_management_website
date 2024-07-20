@@ -1,0 +1,25 @@
+{% extends "security/base.html" %}
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>Schedule ID</th>
+                <th>Flight Number</th>
+                <th>Departure DateTime</th>
+                <th>Arrival DateTime</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td>{{ post.ScheduleID }}</td>
+                    <td>{{ post.FlightNumber }}</td>
+                    <td>{{ post.DepartureDateTime }}</td>
+                    <td>{{ post.ArrivalDateTime }}</td>
+                    <td>{{ post.Status }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

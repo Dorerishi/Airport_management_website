@@ -1,0 +1,18 @@
+{% extends "security/base.html" %}
+
+{% block content %}
+  <h2>Delete Record</h2>
+  <form method="post">
+    {% csrf_token %}
+    
+
+    <label for="record_id">Record ID:</label>
+    <select id="record_id" name="record_id">
+      {% for id in record_ids %}
+        <option value="{{ id.id }}">{{ id.id }}</option>
+      {% endfor %}
+    </select><br>
+
+    <button type="submit">Delete</button>
+  </form>
+{% endblock %}

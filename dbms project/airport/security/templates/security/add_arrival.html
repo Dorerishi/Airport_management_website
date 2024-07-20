@@ -1,0 +1,33 @@
+{% extends "security/fl_no.html" %}
+
+{% block content2 %}
+  <h2>Add Arrival</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="arrival_id">Arrival ID:</label>
+    <input type="text" id="arrival_id" name="ArrivalID"><br>
+    
+    <label for="flight_number">Flight Number:</label>
+    <input type="text" id="flight_number" name="FlightNumber"><br>
+    
+    <label for="arrival_datetime">Arrival DateTime:</label>
+    <input type="datetime-local" id="arrival_datetime" name="ArrivalDateTime"><br>
+
+    <label for="departure_datetime">Departure DateTime:</label>
+    <input type="datetime-local" id="departure_datetime" name="DepartureDateTime"><br>
+    
+    <label for="origin">Origin:</label>
+    <input type="text" id="origin" name="Origin"><br>
+    
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" name="Destination"><br>
+
+    <label for="gate_id">Gate ID:</label>
+    <input type="text" id="gate_id" name="GateID"><br>
+    
+    <label for="status">Status:</label>
+    <input type="text" id="status" name="Status"><br>
+    
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}

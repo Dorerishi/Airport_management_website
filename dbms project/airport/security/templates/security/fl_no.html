@@ -1,0 +1,19 @@
+{% extends "security/base.html" %}
+{% block content %}
+<h2>Flight Numbers Available</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Flight Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td>{{ post.FlightNumber }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% block content2 %}{% endblock %}
+{% endblock %}

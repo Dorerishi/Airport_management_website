@@ -1,0 +1,26 @@
+{% extends "security/base.html" %}
+
+{% block content %}
+  <h2>Update Arrival</h2>
+  <form method="post">
+    {% csrf_token %}
+    
+    <label for="arrival_id">Arrival ID:</label>
+    <select id="arrival_id" name="ArrivalID">
+      {% for id in arrival_ids %}
+        <option value="{{ id.ArrivalID }}">{{ id.ArrivalID }}</option>
+      {% endfor %}
+    </select><br>
+
+    <label for="arrival_datetime">Arrival DateTime:</label>
+    <input type="datetime-local" id="arrival_datetime" name="ArrivalDateTime"><br>
+
+    <label for="departure_datetime">Departure DateTime:</label>
+    <input type="datetime-local" id="departure_datetime" name="DepartureDateTime"><br>
+
+    <label for="status">Status:</label>
+    <input type="text" id="status" name="Status"><br>
+
+    <button type="submit">Update</button>
+  </form>
+{% endblock %}

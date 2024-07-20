@@ -1,0 +1,15 @@
+{% extends "security/base.html" %}
+
+{% block content %}
+    <h1>Delete Passenger</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="PassengerID">Select PassengerID to delete:</label>
+        <select name="PassengerID" id="PassengerID" required>
+            {% for id in passenger_ids %}
+                <option value="{{ id.id }}">{{ id.id }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Delete</button>
+    </form>
+{% endblock %}
